@@ -1,0 +1,12 @@
+$$$$ regex pattern logic $$$$
+#r'^[+-]? ---> input start with + or -
+# [0-9]* next character will be to be 0,1,2,3,.... or 9
+\  ----> skip character for '.' ---> w/o this compiler won't understand '.' char
+[0-9]+$ --> denotes ending of last number to be 0,1,2,3,... or 9
+
+import re
+t=r'^([+,-]?[0-9]*\.[][0-9]+$)'
+n=int(input())
+for i in range(n):
+    s=input()
+    print(bool(re.match(t,s)))
